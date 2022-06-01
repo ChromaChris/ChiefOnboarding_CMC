@@ -1,13 +1,13 @@
 databases:
   - name: chiefonboardingdb
-    region: frankfurt
+    region: oregon
     databaseName: chiefonboardingdb
     ipAllowList: []
 
 services:
   - type: web
     name: chiefonboarding
-    region: frankfurt
+    region: oregon
     env: docker
     dockerfilePath: ./back/Dockerfile
     envVars:
@@ -18,6 +18,8 @@ services:
       - key: ACCOUNT_EMAIL
         sync: false
       - key: ACCOUNT_PASSWORD 
+        sync: false
+      - key: BASE_URL
         sync: false
       - key: ALLOWED_HOSTS
         sync: false
